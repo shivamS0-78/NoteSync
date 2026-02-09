@@ -10,6 +10,7 @@ const ViewNotes = () => {
 
   return (
     <>
+    {/* VIEW NOTES FEATURE */}
       <input className='border-blue p-4 rounded-2xl w-154 bg-gray-700'
        type='text'
        placeholder='enter title here' 
