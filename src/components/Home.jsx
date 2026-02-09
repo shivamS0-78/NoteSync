@@ -16,6 +16,7 @@ const Home = () => {
     if(noteId){
       const notes = allNotes.find((n)=>n._id === noteId);
       setTitle(notes.title);
+      setTitle(notes.title);console.log(notes.title)
       setValue(notes.content);
     }
     }, [noteId])

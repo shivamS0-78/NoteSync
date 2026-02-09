@@ -33,5 +33,4 @@ const ViewNotes = () => {
     </>
   )
 }
-
-export default ViewNotes
+export default ViewNotes;
