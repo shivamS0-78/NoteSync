@@ -5,7 +5,6 @@ import { removeNotes } from '../redux/notesSlice';
 const Notes = () => {
 
   const notes = useSelector((state) => state.notes.notes);
-  console.log(notes);
   const [searchTerm,setsearchTerm] = useState('');
   const dispatch = useDispatch();
 

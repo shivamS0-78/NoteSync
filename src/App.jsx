@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Notes from './components/Notes';
 import Home from './components/Home';
 import ViewNotes from './components/ViewNotes';
+import Todo from './components/Todo';
 
 const router = createBrowserRouter(
   [
@@ -27,6 +28,13 @@ const router = createBrowserRouter(
       <div>
         <Navbar />
         <ViewNotes />
+      </div>
+    },{
+      path: '/todos',
+      element :
+      <div>
+        <Navbar />
+        <Todo />
       </div>
     }
   ]

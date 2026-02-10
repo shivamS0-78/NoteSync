@@ -11,6 +11,10 @@ const Navbar = () => {
         <NavLink to='/notes'>
             Notes
         </NavLink>
+
+        <NavLink to='/todos'>
+            Todos
+        </NavLink>
     </div>
   )
 }
