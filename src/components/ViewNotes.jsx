@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
+import DialogBox from './DialogBox';
 
 const ViewNotes = () => {
+  const [showDialog , setShowDialog] = useState(false);
+  const [todo , setTodo] = useState(null);
+
   const {id} = useParams();
   const allNotes= useSelector((state)=> state.notes.notes);
   console.log(allNotes);
   const notes = allNotes.find((n)=>n._id === id);
+
+  const handleSelect = (e) => {
+    const { selectionStart, selectionEnd, value } = e.target;
+    const selectedText = value.substring(selectionStart, selectionEnd);
+    console.log("Selected:", selectedText);
+
+    if(selectedText.length>0){
+    const todo = {
+      title : selectedText ,
+      _id : Date.now().toString(24),
+    };
+    setTodo(todo);
+    setShowDialog(true);
+    }
+  };
 
   return (
     <>
@@ -27,8 +46,15 @@ const ViewNotes = () => {
        placeholder='Enter your content'
        value={notes.content}
        rows={30}
-       disabled
+       readOnly
+       onSelect={handleSelect}
        />
+       {showDialog && (
+        <DialogBox
+          info={todo}
+          onClose={()=>setShowDialog(false)}
+          />
+       )}
     </div>
     </>
   )
