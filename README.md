@@ -84,4 +84,3 @@ User manually selects specific content from a note.
 Selected content is converted into a Todo.
 
 User assigns priority and manages todo lifecycle separately.
->>>>>>> origin/main
